@@ -1,0 +1,39 @@
+Lista zadań:
+
+1. Utworzenie struktur danych dla zarządzania wydatkami
+Opis: Stworzyć odpowiednie klasy i struktury danych (np. Expense, Category) do reprezentowania wydatków i ich kategorii.
+
+
+2. Interfejs użytkownika (UI) do wprowadzania wydatków
+Opis: Zaprojektować i zaimplementować widok umożliwiający użytkownikom dodawanie nowych wydatków z informacjami takimi jak kwota, kategoria, data.
+
+3.Implementacja widoku listy wydatków
+Opis: Wyświetlenie listy wszystkich wydatków z ich szczegółami (kwota, opis, tagi, data) oraz przycisku umożliwiającego ich usunięcie.
+
+4.Filtracja wydatków
+Opis: Dodanie funkcji filtrowania listy wydatków według kategorii (tagi) oraz zakresu czasu (np. miesiąc, zawsze).
+
+Podzadania:
+Pobieranie przefiltrowanych danych z bazy.
+Aktualizacja widoku listy po wybraniu opcji filtrowania.
+
+5. Implementacja podsumowania wydatków
+Opis: Wyświetlanie sumy wydatków w widoku głównym, uwzględniającej aktualne filtry.
+
+Podzadania:
+Obliczenie sumy na podstawie danych z bazy.
+Aktualizacja wartości w UI po dodaniu, usunięciu lub przefiltrowaniu wydatków.
+
+6. Usuwanie wydatków
+Opis: Dodanie funkcji usuwania wybranego wydatku z listy wraz z potwierdzeniem.
+
+Podzadania:
+Wysłanie zapytania do bazy danych w celu usunięcia.
+Potwierdzenie usunięcia w UI.
+Aktualizacja listy wydatków.
+
+7. Optymalizacja widoku interfejsu użytkownika
+Opis: Dostosowanie UI do lepszej czytelności i użytkowania, w tym poprawa wyglądu przycisków, pola filtrowania oraz sekcji podsumowania.
+
+8. Obsługa błędów
+Opis: Dodanie komunikatów o błędach, np. w przypadku nieudanej walidacji danych lub problemów z połączeniem z bazą.
