@@ -3,7 +3,6 @@ Lista zadań:
 1. Utworzenie struktur danych dla zarządzania wydatkami
 Opis: Stworzyć odpowiednie klasy i struktury danych (np. Expense, Category) do reprezentowania wydatków i ich kategorii.
 
-
 2. Interfejs użytkownika (UI) do wprowadzania wydatków
 Opis: Zaprojektować i zaimplementować widok umożliwiający użytkownikom dodawanie nowych wydatków z informacjami takimi jak kwota, kategoria, data.
 
