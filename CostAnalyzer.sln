@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CostAnalyzer", "src\CostAnalyzer.csproj", "{1D28AC8D-C363-4E12-8025-48C608F0928C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D28AC8D-C363-4E12-8025-48C608F0928C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D28AC8D-C363-4E12-8025-48C608F0928C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D28AC8D-C363-4E12-8025-48C608F0928C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D28AC8D-C363-4E12-8025-48C608F0928C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E432C12-43C8-4A49-8677-EAE711EF5C45}
+	EndGlobalSection
+EndGlobal
