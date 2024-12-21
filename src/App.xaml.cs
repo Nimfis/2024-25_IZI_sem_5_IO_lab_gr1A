@@ -20,6 +20,12 @@ namespace CostAnalyzer
 
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
+                var db = new CostItemsRepository();
+
+                desktop.MainWindow = new MainWindow
+                {
+                    DataContext = new MainWindowViewModel(db),
+                };
             }
         }
     }
