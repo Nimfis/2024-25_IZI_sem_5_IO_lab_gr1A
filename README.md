@@ -1,8 +1,8 @@
 # 2024-25_IZI_sem_5_IO_lab_gr1A
-# SmartBudget
+# CostAnalyzer
 
 ## Opis projektu
-**SmartBudget** to aplikacja służąca do monitorowania i zarządzania codziennymi wydatkami użytkownika. Umożliwia ona dodawanie wydatków z podziałem na kategorie, takie jak zakupy czy jedzenie, z opcjonalnym opisem. Użytkownik może przeglądać wydatki z podziałem na kategorie oraz w wybranych zakresach czasowych, co pozwala na łatwiejsze zarządzanie finansami osobistymi.
+**CostAnalyzer** to aplikacja służąca do monitorowania i zarządzania codziennymi wydatkami użytkownika. Umożliwia ona dodawanie wydatków z podziałem na kategorie, takie jak zakupy czy jedzenie, z opcjonalnym opisem. Użytkownik może przeglądać wydatki z podziałem na kategorie oraz w wybranych zakresach czasowych, co pozwala na łatwiejsze zarządzanie finansami osobistymi.
 
 ---
 
