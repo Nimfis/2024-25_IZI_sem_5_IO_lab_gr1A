@@ -2,41 +2,93 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
              x:Class="CostAnalyzer.Views.CostListView">
 
   <DockPanel>
-    <Button DockPanel.Dock="Bottom"
-            Command="{Binding $parent[Window].DataContext.AddItem}">
+
+	  <Grid DockPanel.Dock="Top">
+		  <Grid.ColumnDefinitions>
+			  <ColumnDefinition></ColumnDefinition>
+			  <ColumnDefinition></ColumnDefinition>
+		  </Grid.ColumnDefinitions>
+		  <ComboBox Grid.Column="0" Margin="10,10,10,10" FontWeight="Bold" CornerRadius="10" BorderBrush="Transparent" Background="AliceBlue">
+			  <ComboBoxItem Content="Coffee"></ComboBoxItem>
+			  <ComboBoxItem Content="Tea"></ComboBoxItem>
+		  </ComboBox>
+		  <ComboBox Grid.Column="1" Margin="10,10,10,10" FontWeight="Bold" CornerRadius="10" BorderBrush="Transparent" Background="AliceBlue">
+			  <ComboBoxItem Content="Coffee"></ComboBoxItem>
+			  <ComboBoxItem Content="Tea"></ComboBoxItem>
+		  </ComboBox>
+	  </Grid>
+	  
+	  <Button
+		FontWeight="Bold"
+		BorderBrush="Transparent"
+		CornerRadius="10"
+		Margin="10"
+		Background="AliceBlue"
+		DockPanel.Dock="Bottom"
+		Command="{Binding $parent[Window].DataContext.AddItem}">
       Add an item
     </Button>
 
-    <ItemsControl Items="{Binding Items}">
-      <ItemsControl.ItemTemplate>
-        <DataTemplate>
-          <Border Margin="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
-            <StackPanel Orientation="Vertical" Margin="10">
-              <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
-              <TextBlock Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost}"/>
-              <ItemsControl Items="{Binding Tags}">
-                <ItemsControl.ItemsPanel>
-                  <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                  </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                  <DataTemplate>
-                    <Border Margin="5" CornerRadius="10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
-                      <TextBlock Text="{Binding}" Margin="5"/>
-                    </Border>
-                  </DataTemplate>
-                </ItemsControl.ItemTemplate>
-              </ItemsControl>
-            </StackPanel>
-          </Border>
-        </DataTemplate>
-      </ItemsControl.ItemTemplate>
-    </ItemsControl>
+	  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+		  <ItemsControl Items="{Binding Items}" Padding="0,5,0,0">
+			  <ItemsControl.ItemTemplate>
+				  <DataTemplate>
+					  <Grid>
+						  <Button
+                
+							BorderBrush="Transparent"
+							CornerRadius="10"
+							HorizontalAlignment="Stretch"
+							Margin="10,0,10,10" Padding="0"
+							HorizontalContentAlignment="Left">
+							  <!--<Border Margin="10,0,10,10" BorderBrush="Gray" BorderThickness="1" CornerRadius="10">-->
+							  <StackPanel Orientation="Vertical" Margin="10">
+								  <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
+								  <TextBlock Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost}"/>
+								  <!--<ItemsControl Items="{Binding Tags}">-->
+								  <ItemsControl Items="{Binding Tags}">
+									  <ItemsControl.ItemsPanel>
+										  <ItemsPanelTemplate>
+											  <StackPanel Orientation="Horizontal"/>
+										  </ItemsPanelTemplate>
+									  </ItemsControl.ItemsPanel>
+									  <ItemsControl.ItemTemplate>
+										  <DataTemplate>
+											  <Border Margin="5" CornerRadius="10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+												  <TextBlock Text="{Binding}" Margin="5"/>
+											  </Border>
+										  </DataTemplate>
+									  </ItemsControl.ItemTemplate>
+								  </ItemsControl>
+							  </StackPanel>
+							  <!--</Border>-->
+						  </Button>
+						  <Button
+							Background="Pink"
+							BorderBrush="Transparent"
+							FontWeight="ExtraBlack"
+							   Margin="0,-5,5,0"
+							   Padding="0,-3,0,0"
+							   HorizontalAlignment="Right"
+							   VerticalAlignment="Top"
+							   DockPanel.Dock="Left"
+							   Width="15" Height="15"
+							   Content="-"
+							   VerticalContentAlignment="Center"
+							   HorizontalContentAlignment="Center"
+							   CornerRadius="100"/>
+					  </Grid>
+					  <!--<CheckBox Margin="4"
+                    IsChecked="{Binding IsChecked}"
+                    Content="{Binding Description}"/>-->
+				  </DataTemplate>
+			  </ItemsControl.ItemTemplate>
+		  </ItemsControl>
+	  </ScrollViewer>
   </DockPanel>
   
 </UserControl>
