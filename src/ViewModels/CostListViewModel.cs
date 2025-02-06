@@ -1,16 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using CostAnalyzer.Models;
+using CostAnalyzer.Services;
+
 
 namespace CostAnalyzer.ViewModels
 {
     public class CostListViewModel : ViewModelBase
     {
-        public CostListViewModel(IEnumerable<CostItem> items)
+        private readonly CostItemsRepository _repository;
+
+        public CostListViewModel(CostItemsRepository repository)
         {
-            Items = new ObservableCollection<CostItem>(items);
+            _repository = repository;
         }
 
-        public ObservableCollection<CostItem> Items { get; }
+        public ObservableCollection<CostItem> Items => _repository.GetItems();
     }
 }

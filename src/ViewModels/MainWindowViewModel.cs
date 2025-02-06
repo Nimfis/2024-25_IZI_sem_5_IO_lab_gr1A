@@ -10,10 +10,12 @@ namespace CostAnalyzer.ViewModels
     class MainWindowViewModel : ViewModelBase
     {
         ViewModelBase content;
+        private readonly CostItemsRepository _repository;
 
-        public MainWindowViewModel(CostItemsRepository db)
+        public MainWindowViewModel(CostItemsRepository repository)
         {
-            Content = List = new CostListViewModel(db.GetItems());
+            _repository = repository;
+            Content = List = new CostListViewModel(_repository);
         }
 
         public ViewModelBase Content
@@ -36,7 +38,7 @@ namespace CostAnalyzer.ViewModels
                 {
                     if (model != null)
                     {
-                        List.Items.Add(model);
+                        _repository.AddItem(model);
                     }
 
                     Content = List;
@@ -45,12 +47,6 @@ namespace CostAnalyzer.ViewModels
             Content = vm;
         }
 
-        public void RemoveItem(Guid id)
-        {
-            var el = List.Items.FirstOrDefault(x => x.Id == id);
-            List.Items.Remove(el);
-        }
-
-
+        public void RemoveItem(Guid id) => _repository.RemoveItem(id);
     }
 }
