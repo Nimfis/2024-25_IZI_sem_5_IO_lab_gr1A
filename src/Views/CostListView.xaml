@@ -12,9 +12,15 @@
 			  <ColumnDefinition></ColumnDefinition>
 			  <ColumnDefinition></ColumnDefinition>
 		  </Grid.ColumnDefinitions>
-		  <ComboBox Grid.Column="0" Margin="10,10,10,10" FontWeight="Bold" CornerRadius="10" BorderBrush="Transparent" Background="AliceBlue">
-			  <ComboBoxItem Content="Coffee"></ComboBoxItem>
-			  <ComboBoxItem Content="Tea"></ComboBoxItem>
+		  <ComboBox
+        Items="{Binding Tags}"
+        SelectedItem="{Binding SelectedTag}"
+        Grid.Column="0"
+        Margin="10,10,10,10"
+        FontWeight="Bold"
+        CornerRadius="10"
+        BorderBrush="Transparent"
+        Background="AliceBlue">
 		  </ComboBox>
 		  <ComboBox Grid.Column="1" Margin="10,10,10,10" FontWeight="Bold" CornerRadius="10" BorderBrush="Transparent" Background="AliceBlue">
 			  <ComboBoxItem Content="Coffee"></ComboBoxItem>
@@ -33,13 +39,20 @@
       Add an item
     </Button>
 
+	  <Border DockPanel.Dock="Top" Margin="10,0,10,10" Background="AliceBlue" CornerRadius="10">
+		  <TextBlock HorizontalAlignment="Center" Margin="10" FontWeight="Black" Text="{Binding CostSum, StringFormat='Suma: {0:C}'}"/>
+	  </Border>
+s
+
 	  <ScrollViewer VerticalScrollBarVisibility="Hidden">
 		  <ItemsControl Items="{Binding Items}" Padding="0,5,0,0">
 			  <ItemsControl.ItemTemplate>
 				  <DataTemplate>
 					  <Grid>9
 						  <Button
-                
+							  
+							Command="{Binding $parent[Window].DataContext.EditItem}"
+							CommandParameter="{Binding Id}"							
 							BorderBrush="Transparent"
 							CornerRadius="10"
 							HorizontalAlignment="Stretch"
@@ -48,7 +61,7 @@
 							  <!--<Border Margin="10,0,10,10" BorderBrush="Gray" BorderThickness="1" CornerRadius="10">-->
 							  <StackPanel Orientation="Vertical" Margin="10">
 								  <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
-								  <TextBlock Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost}"/>
+								  <TextBlock Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost, StringFormat={}{0:C}}"/>
 								  <!--<ItemsControl Items="{Binding Tags}">-->
 								  <ItemsControl Items="{Binding Tags}">
 									  <ItemsControl.ItemsPanel>
