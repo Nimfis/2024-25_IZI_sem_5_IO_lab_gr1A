@@ -3,6 +3,7 @@ using System.Reactive.Linq;
 using ReactiveUI;
 using CostAnalyzer.Models;
 using CostAnalyzer.Services;
+using System.Linq;
 
 namespace CostAnalyzer.ViewModels
 {
@@ -43,5 +44,13 @@ namespace CostAnalyzer.ViewModels
 
             Content = vm;
         }
+
+        public void RemoveItem(Guid id)
+        {
+            var el = List.Items.FirstOrDefault(x => x.Id == id);
+            List.Items.Remove(el);
+        }
+
+
     }
 }

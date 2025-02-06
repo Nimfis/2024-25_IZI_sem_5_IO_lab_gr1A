@@ -37,7 +37,7 @@
 		  <ItemsControl Items="{Binding Items}" Padding="0,5,0,0">
 			  <ItemsControl.ItemTemplate>
 				  <DataTemplate>
-					  <Grid>
+					  <Grid>9
 						  <Button
                 
 							BorderBrush="Transparent"
@@ -68,6 +68,10 @@
 							  <!--</Border>-->
 						  </Button>
 						  <Button
+							  
+							Command="{Binding $parent[Window].DataContext.RemoveItem}" 
+							CommandParameter="{Binding Id}"
+							
 							Background="Pink"
 							BorderBrush="Transparent"
 							FontWeight="ExtraBlack"
