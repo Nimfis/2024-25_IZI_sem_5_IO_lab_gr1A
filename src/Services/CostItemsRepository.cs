@@ -21,7 +21,7 @@ namespace CostAnalyzer.Services
             {
                 Id = Guid.NewGuid(),
                 Cost = 1023.23m,
-                Description = "Biedronka - Kefir",
+                Description = "Biedronka - kefir",
                 Tags = new string[] {"Zakupy", "Jedzenie"}
             },
             new CostItem()
