@@ -4,7 +4,6 @@ using ReactiveUI;
 using CostAnalyzer.Models;
 using CostAnalyzer.Services;
 using System.Linq;
-using HarfBuzzSharp;
 
 namespace CostAnalyzer.ViewModels
 {

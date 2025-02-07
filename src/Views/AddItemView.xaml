@@ -14,7 +14,7 @@
 		  Margin="10"
 		  Background="RosyBrown"
       >
-			Cancel
+			Anuluj
 		</Button>
 		<Button
 		  FontWeight="Bold"
