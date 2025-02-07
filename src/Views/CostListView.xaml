@@ -22,9 +22,15 @@
         BorderBrush="Transparent"
         Background="AliceBlue">
 		  </ComboBox>
-		  <ComboBox Grid.Column="1" Margin="10,10,10,10" FontWeight="Bold" CornerRadius="10" BorderBrush="Transparent" Background="AliceBlue">
-			  <ComboBoxItem Content="Coffee"></ComboBoxItem>
-			  <ComboBoxItem Content="Tea"></ComboBoxItem>
+		  <ComboBox
+        Items="{Binding Months}"
+        SelectedItem="{Binding SelectedMonth}"
+        Grid.Column="1"
+        Margin="10,10,10,10"
+        FontWeight="Bold"
+        CornerRadius="10"
+        BorderBrush="Transparent"
+        Background="AliceBlue">
 		  </ComboBox>
 	  </Grid>
 	  
@@ -59,9 +65,9 @@ s
 							Margin="10,0,10,10" Padding="0"
 							HorizontalContentAlignment="Left">
 							  <!--<Border Margin="10,0,10,10" BorderBrush="Gray" BorderThickness="1" CornerRadius="10">-->
-							  <StackPanel Orientation="Vertical" Margin="10">
+							  <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Stretch">
 								  <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
-								  <TextBlock Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost, StringFormat={}{0:C}}"/>
+								  <TextBlock Grid.Column="0" Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost, StringFormat={}{0:C}}"/>
 								  <!--<ItemsControl Items="{Binding Tags}">-->
 								  <ItemsControl Items="{Binding Tags}">
 									  <ItemsControl.ItemsPanel>
@@ -71,12 +77,13 @@ s
 									  </ItemsControl.ItemsPanel>
 									  <ItemsControl.ItemTemplate>
 										  <DataTemplate>
-											  <Border Margin="5" CornerRadius="10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+											  <Border Margin="0,5,5,0" CornerRadius="10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
 												  <TextBlock Text="{Binding}" Margin="5"/>
 											  </Border>
 										  </DataTemplate>
 									  </ItemsControl.ItemTemplate>
 								  </ItemsControl>
+								  <TextBlock Grid.Column="0" Margin="0,5,0,0" FontSize="10" FontWeight="Light" Text="{Binding CreatedAt}"/>
 							  </StackPanel>
 							  <!--</Border>-->
 						  </Button>
@@ -88,16 +95,16 @@ s
 							Background="Pink"
 							BorderBrush="Transparent"
 							FontWeight="ExtraBlack"
-							   Margin="0,-5,5,0"
-							   Padding="0,-3,0,0"
-							   HorizontalAlignment="Right"
-							   VerticalAlignment="Top"
-							   DockPanel.Dock="Left"
-							   Width="15" Height="15"
-							   Content="-"
-							   VerticalContentAlignment="Center"
-							   HorizontalContentAlignment="Center"
-							   CornerRadius="100"/>
+							Margin="0,-5,5,0"
+							Padding="0,-3,0,0"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							DockPanel.Dock="Left"
+							Width="15" Height="15"
+							Content="-"
+							VerticalContentAlignment="Center"
+							HorizontalContentAlignment="Center"
+							CornerRadius="100"/>
 					  </Grid>
 					  <!--<CheckBox Margin="4"
                     IsChecked="{Binding IsChecked}"
