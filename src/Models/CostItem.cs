@@ -9,6 +9,7 @@ namespace CostAnalyzer.Models
         public decimal Cost { get; set; } 
         public string[] Tags { get; set; }
         public DateTime CreatedAt { get; set; }
+
         public string JoinedTags => string.Join(' ', Tags);
     }
 }

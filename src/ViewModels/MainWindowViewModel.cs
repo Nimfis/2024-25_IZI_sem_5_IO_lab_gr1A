@@ -31,9 +31,8 @@ namespace CostAnalyzer.ViewModels
             var vm = new AddItemViewModel();
 
             Observable.Merge(
-                    vm.Ok,
-                    vm.Cancel.Select(_ => (CostItem)null))
-                //.Take(1)
+                vm.Ok,
+                vm.Cancel.Select(_ => (CostItem)null))
                 .Subscribe(model =>
                 {
                     if (model != null)
@@ -45,7 +44,6 @@ namespace CostAnalyzer.ViewModels
                 });
 
             Content = vm;
-
             List.ClearFilters();
         }
 
@@ -54,16 +52,18 @@ namespace CostAnalyzer.ViewModels
             _repository.RemoveItem(id);
             List.ClearFilters();
         }
+
         public void EditItem(Guid id)
         {
             var entity = _repository.GetItemById(id);
-
-            var vm = new AddItemViewModel()
+            
+            var vm = new AddItemViewModel() 
             {
-                Cost = entity.Cost,
-                Tags = entity.JoinedTags,
-                Description = entity.Description
+                Cost = entity.Cost, 
+                Tags = entity.JoinedTags, 
+                Description = entity.Description 
             };
+
             Observable.Merge(
                 vm.Ok,
                 vm.Cancel.Select(_ => (CostItem)null))
@@ -73,8 +73,10 @@ namespace CostAnalyzer.ViewModels
                     {
                         _repository.EditItem(id, model);
                     }
+
                     Content = List;
                 });
+
             Content = vm;
             List.ClearFilters();
         }

@@ -7,106 +7,104 @@
 
   <DockPanel>
 
-	  <Grid DockPanel.Dock="Top">
-		  <Grid.ColumnDefinitions>
-			  <ColumnDefinition></ColumnDefinition>
-			  <ColumnDefinition></ColumnDefinition>
-		  </Grid.ColumnDefinitions>
-		  <ComboBox
+    <Grid DockPanel.Dock="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition></ColumnDefinition>
+        <ColumnDefinition></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <ComboBox 
         Items="{Binding Tags}"
         SelectedItem="{Binding SelectedTag}"
-        Grid.Column="0"
-        Margin="10,10,10,10"
-        FontWeight="Bold"
-        CornerRadius="10"
-        BorderBrush="Transparent"
+        Grid.Column="0" 
+        Margin="10,10,10,10" 
+        FontWeight="Bold" 
+        CornerRadius="10" 
+        BorderBrush="Transparent" 
         Background="AliceBlue">
-		  </ComboBox>
-		  <ComboBox
+      </ComboBox>
+
+      <ComboBox 
         Items="{Binding Months}"
         SelectedItem="{Binding SelectedMonth}"
-        Grid.Column="1"
-        Margin="10,10,10,10"
-        FontWeight="Bold"
-        CornerRadius="10"
-        BorderBrush="Transparent"
+        Grid.Column="1" 
+        Margin="10,10,10,10" 
+        FontWeight="Bold" 
+        CornerRadius="10" 
+        BorderBrush="Transparent" 
         Background="AliceBlue">
-		  </ComboBox>
-	  </Grid>
-	  
-	  <Button
-		FontWeight="Bold"
-		BorderBrush="Transparent"
-		CornerRadius="10"
-		Margin="10"
-		Background="AliceBlue"
-		DockPanel.Dock="Bottom"
-		Command="{Binding $parent[Window].DataContext.AddItem}">
+      </ComboBox>
+    </Grid>
+    
+    
+
+    <Button
+      FontWeight="Bold"
+      BorderBrush="Transparent"
+      CornerRadius="10"
+      Margin="10"
+      Background="AliceBlue"
+      DockPanel.Dock="Bottom"
+      Command="{Binding $parent[Window].DataContext.AddItem}">
       Dodaj
     </Button>
 
-	  <Border DockPanel.Dock="Top" Margin="10,0,10,10" Background="AliceBlue" CornerRadius="10">
-		  <TextBlock HorizontalAlignment="Center" Margin="10" FontWeight="Black" Text="{Binding CostSum, StringFormat='Suma: {0:C}'}"/>
-	  </Border>
-s
+    <Border DockPanel.Dock="Top" Margin="10,0,10,10" Background="AliceBlue" CornerRadius="10">
+      <TextBlock HorizontalAlignment="Center" Margin="10" FontWeight="Black" Text="{Binding CostSum, StringFormat='Suma: {0:C}'}"/>
+    </Border>
 
-	  <ScrollViewer VerticalScrollBarVisibility="Hidden">
-		  <ItemsControl Items="{Binding Items}" Padding="0,5,0,0">
-			  <ItemsControl.ItemTemplate>
-				  <DataTemplate>
-					  <Grid>9
-						  <Button
-							  
-							Command="{Binding $parent[Window].DataContext.EditItem}"
-							CommandParameter="{Binding Id}"							
-							BorderBrush="Transparent"
-							CornerRadius="10"
-							HorizontalAlignment="Stretch"
-							Margin="10,0,10,10" Padding="0"
-							HorizontalContentAlignment="Left">
-							  <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Stretch">
-								  <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
-								  <TextBlock Grid.Column="0" Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost, StringFormat={}{0:C}}"/>
-								  <ItemsControl Items="{Binding Tags}">
-									  <ItemsControl.ItemsPanel>
-										  <ItemsPanelTemplate>
-											  <StackPanel Orientation="Horizontal"/>
-										  </ItemsPanelTemplate>
-									  </ItemsControl.ItemsPanel>
-									  <ItemsControl.ItemTemplate>
-										  <DataTemplate>
-											  <Border Margin="0,5,5,0" CornerRadius="10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
-												  <TextBlock Text="{Binding}" Margin="5"/>
-											  </Border>
-										  </DataTemplate>
-									  </ItemsControl.ItemTemplate>
-								  </ItemsControl>
-								  <TextBlock Grid.Column="0" Margin="0,5,0,0" FontSize="10" FontWeight="Light" Text="{Binding CreatedAt}"/>
-							  </StackPanel>
-						  </Button>
-						  <Button
-							  
-							Command="{Binding $parent[Window].DataContext.RemoveItem}" 
-							CommandParameter="{Binding Id}"
-							
-							Background="Pink"
-							BorderBrush="Transparent"
-							FontWeight="ExtraBlack"
-							Margin="0,-5,5,0"
-							Padding="0,-3,0,0"
-							HorizontalAlignment="Right"
-							VerticalAlignment="Top"
-							DockPanel.Dock="Left"
-							Width="15" Height="15"
-							Content="-"
-							VerticalContentAlignment="Center"
-							HorizontalContentAlignment="Center"
-							CornerRadius="100"/>
-					  </Grid>
-				  </DataTemplate>
-			  </ItemsControl.ItemTemplate>
-		  </ItemsControl>
-	  </ScrollViewer>
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+      <ItemsControl Items="{Binding Items}" Padding="0,5,0,0">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Button
+                Command="{Binding $parent[Window].DataContext.EditItem}"
+                CommandParameter="{Binding Id}"
+                BorderBrush="Transparent"
+                CornerRadius="10" 
+                HorizontalAlignment="Stretch" 
+                Margin="10,0,10,10" Padding="0" 
+                HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Stretch">
+                  <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
+                  <TextBlock Grid.Column="0" Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost, StringFormat={}{0:C}}"/>
+                  <ItemsControl Items="{Binding Tags}">
+                    <ItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                      </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                      <DataTemplate>
+                        <Border Margin="0,5,5,0" CornerRadius="10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+                          <TextBlock Text="{Binding}" Margin="5"/>
+                        </Border>
+                      </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                  </ItemsControl>
+                  <TextBlock Grid.Column="0" Margin="0,5,0,0" FontSize="10" FontWeight="Light" Text="{Binding CreatedAt}"/>
+                </StackPanel>
+              </Button>
+              <Button
+                Command="{Binding $parent[Window].DataContext.RemoveItem}"
+                CommandParameter="{Binding Id}"
+                Background="Pink"
+                BorderBrush="Transparent"
+                FontWeight="ExtraBlack"
+                Margin="0,-5,5,0"
+                Padding="0,-3,0,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                DockPanel.Dock="Left"
+                Width="15" Height="15"
+                Content="-"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                CornerRadius="100"/>
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
   </DockPanel>
-  
 </UserControl>

@@ -4,13 +4,12 @@ using CostAnalyzer.Models;
 using CostAnalyzer.Services;
 using ReactiveUI;
 
-
 namespace CostAnalyzer.ViewModels
 {
     public class CostListViewModel : ViewModelBase
     {
         private readonly CostItemsRepository _repository;
-
+        
         public CostListViewModel(CostItemsRepository repository)
         {
             _repository = repository;
@@ -18,22 +17,25 @@ namespace CostAnalyzer.ViewModels
             SelectedTag = Tags.FirstOrDefault();
             SelectedMonth = Months.FirstOrDefault();
         }
+
         IEnumerable<CostItem> items;
         public IEnumerable<CostItem> Items
         {
             get => _repository.GetItems(selectedTag, selectedMonth);
             set => this.RaiseAndSetIfChanged(ref items, value);
         }
-        //public IEnumerable<CostItem> Items => _repository.GetItems(selectedTag);
+
         string selectedTag;
         public string SelectedTag
         {
             get => selectedTag;
             set
             {
+                this.RaiseAndSetIfChanged(ref selectedTag, value);
                 UpdateList(value, selectedMonth);
             }
         }
+
         string selectedMonth;
         public string SelectedMonth
         {
@@ -44,6 +46,7 @@ namespace CostAnalyzer.ViewModels
                 UpdateList(selectedTag, value);
             }
         }
+
         IEnumerable<string> tags;
         public IEnumerable<string> Tags
         {
@@ -72,12 +75,13 @@ namespace CostAnalyzer.ViewModels
             get => costSum = Sum;
             set => this.RaiseAndSetIfChanged(ref costSum, value);
         }
+
         public void ClearFilters()
         {
-
             Tags = _repository.GetTagsFilters(null);
             Months = _repository.GetMonthsFilters(null);
         }
+
         private void UpdateList(string tagFilter, string monthFilter)
         {
             Items = _repository.GetItems(tagFilter, monthFilter);

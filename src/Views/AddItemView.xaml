@@ -4,57 +4,57 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="300"
              x:Class="CostAnalyzer.Views.AddItemView">
-	<DockPanel>
-		<Button
-		  DockPanel.Dock="Bottom"
-		  Command="{Binding Cancel}"
-		  FontWeight="Bold"
-		  BorderBrush="Transparent"
-		  CornerRadius="10"
-		  Margin="10"
-		  Background="RosyBrown"
+  <DockPanel>
+    <Button 
+      DockPanel.Dock="Bottom" 
+      Command="{Binding Cancel}"
+      FontWeight="Bold"
+      BorderBrush="Transparent"
+      CornerRadius="10"
+      Margin="10"
+      Background="RosyBrown"
       >
-			Anuluj
-		</Button>
-		<Button
-		  FontWeight="Bold"
-		  BorderBrush="Transparent"
-		  CornerRadius="10"
-		  Margin="10,10,10,0"
-		  Background="PaleGreen"
-		  DockPanel.Dock="Bottom"
-		  Command="{Binding Ok}"
+      Anuluj
+    </Button>
+    <Button 
+      FontWeight="Bold"
+      BorderBrush="Transparent"
+      CornerRadius="10"
+      Margin="10,10,10,0"
+      Background="PaleGreen"
+      DockPanel.Dock="Bottom" 
+      Command="{Binding Ok}"
       >
-			OK
-		</Button>
-
-		<TextBox DockPanel.Dock="Top"
-				 AcceptsReturn="False"
-				 Text="{Binding Cost}"
-				 BorderBrush="Transparent"
-				 CornerRadius="10"
-				 Margin="10,10,10,0"
-				 Background="GhostWhite"
-			   Watermark="Wpisz kwotę PLN"/>
-
-		<TextBox DockPanel.Dock="Top"
-				 AcceptsReturn="False"
-			   TextWrapping="Wrap"
-			   Text="{Binding Tags}"
-			 BorderBrush="Transparent"
-			CornerRadius="10"
-		   Margin="10,10,10,0"
-		   Background="GhostWhite"
-			   Watermark="rachunki jedzenie [tagi opcjonalne]"/>
-
-		<TextBox DockPanel.Dock="Top"
+      OK
+    </Button>
+    
+    <TextBox DockPanel.Dock="Top" 
              AcceptsReturn="False"
-				 Text="{Binding Description}"
-			 BorderBrush="Transparent"
-		 CornerRadius="10"
-		 Margin="10"
-		 Background="GhostWhite"
-				 TextWrapping="Wrap"
-				 Watermark="Opis"/>
-	</DockPanel>
+             Text="{Binding Cost}"
+             BorderBrush="Transparent"
+             CornerRadius="10"
+             Margin="10,10,10,0"
+             Background="GhostWhite"
+             Watermark="Wpisz kwotę PLN"/>
+    
+    <TextBox DockPanel.Dock="Top" 
+             AcceptsReturn="False"
+             TextWrapping="Wrap"
+             Text="{Binding Tags}"
+             BorderBrush="Transparent"
+             CornerRadius="10"
+             Margin="10,10,10,0"
+             Background="GhostWhite"
+             Watermark="rachunki jedzenie [tagi opcjonalne]"/>
+    
+    <TextBox DockPanel.Dock="Top" 
+             AcceptsReturn="False"
+             Text="{Binding Description}"
+             BorderBrush="Transparent"
+             CornerRadius="10"
+             Margin="10"
+             Background="GhostWhite"
+             TextWrapping="Wrap"
+             Watermark="Opis"/>
+  </DockPanel>
 </UserControl>
